@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const Search = () => {
+const Search = (props) => {
 
     return (
-        <div class="ui left icon input">
+        <div class="ui large icon input">
             <input type="text" placeholder="Search users..." />
-            <i className="users icon"></i>
+            <i className={`${props.icon} icon`}></i>
         </div>
     );
 }
