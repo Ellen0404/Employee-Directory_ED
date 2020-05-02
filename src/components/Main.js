@@ -33,6 +33,7 @@ const Main = () => {
             department: ""
         });
 
+    // MODAL SHOW /CLOSE
     const handleClose = () => {
         setFiredMatch(false);
         setShow(false);
@@ -114,8 +115,6 @@ const Main = () => {
     return (
         <div className="container">
             <div className="newBaner">
-                <h2></h2>
-
                 <br></br>
                 <Wrapper className="mt-n1">
                     <h1>Employee Directory </h1>
@@ -125,7 +124,7 @@ const Main = () => {
                         icon={"users"} />
                 </Wrapper>
             </div>
-            <div class="ui inverted divider"></div>
+            {/* <div class="ui inverted divider"></div> */}
 
             <div className="opacity">
                 <div className="row mr-2 ml-2">
@@ -135,6 +134,8 @@ const Main = () => {
                         onChange={handleFilter}
                     />
                 </div>
+                <div class="ui inverted divider"></div>
+
                 <br></br>
             </div>
             < CardHolder>
@@ -148,7 +149,6 @@ const Main = () => {
                         email={e.email}
                         phone={e.phone}
                         handleShow={handleShow}
-
                         setEmployee={setEmployee}
                     />
                 ))}
@@ -175,9 +175,6 @@ const Main = () => {
                                     <h6 > Department:  {employee.department}</h6>
                                     <h6 > Salary:  $ {employee.finance}</h6>
                                     <h6 > Title:  {employee.title}</h6>
-
-
-
                                 </Col>
                             </Row>
                         </Container>
