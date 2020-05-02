@@ -134,7 +134,7 @@ const Main = () => {
                         onChange={handleFilter}
                     />
                 </div>
-                <div class="ui inverted divider"></div>
+                <div className="ui inverted divider"></div>
 
                 <br></br>
             </div>

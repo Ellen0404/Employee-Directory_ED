@@ -26,7 +26,7 @@ const EmployeeCard = (props) => {
                 </div>
             </div>
 
-            <div class="ui secondary inverted segment">
+            <div className="ui secondary inverted segment">
                 <button className="ui inverted teal button" onClick={() => {
                     props.setEmployee({
                         name: props.name,
