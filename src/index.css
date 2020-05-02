@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-image: url(/background-blank-empty-light-62693.jpg);
+  background-image: url(https://res.cloudinary.com/https-victoriavasilyeva-photography/image/upload/v1588451483/background-blank-empty-light-62693.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
@@ -43,7 +43,7 @@ code {
 }
 .newBaner{
   height: 50vh;
-  background-image: url(/aerial-architectural-design-architecture-buildings-373912.jpg);
+  background-image: url(https://res.cloudinary.com/https-victoriavasilyeva-photography/image/upload/v1588451492/aerial-architectural-design-architecture-buildings-373912.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size:cover;
