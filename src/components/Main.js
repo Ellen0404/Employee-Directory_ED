@@ -46,7 +46,7 @@ const Main = () => {
         setFiredMatch(true);
         setTimeout(() => {
             handleClose();
-        }, 1000);
+        }, 2000);
 
     }
 
@@ -101,33 +101,42 @@ const Main = () => {
     const handleInputChange = (event) => {
 
         console.log("search value : " + event.target.value);
-        const newSearch = event.target.value;
+        var newSearch = event.target.value;
 
         console.log("search :" + newSearch);
         setFiltered(allEmployees.filter(user => user.name.toLowerCase().includes(newSearch.toLowerCase())));
         console.log("filtered search: ");
         console.log(filtered)
         setSearch(newSearch);
+        newSearch = "";
     }
 
     return (
-        <>
-            <Wrapper>
-                <h2>Employee Directory </h2>
-                <Search
-                    value={search}
-                    handleInputChange={handleInputChange}
-                    icon={"users"} />
-            </Wrapper>
-            <br></br>
-            <div className="row mr-2 ml-2">
-                <h2 className="mr-2 ml-2">Filter by State</h2>
-                <Filter
-                    value={stateChange}
-                    onChange={handleFilter}
-                />
+        <div className="container">
+            <div className="newBaner">
+                <h2></h2>
+
+                <br></br>
+                <Wrapper className="mt-n1">
+                    <h1>Employee Directory </h1>
+                    <Search
+                        value={search}
+                        handleInputChange={handleInputChange}
+                        icon={"users"} />
+                </Wrapper>
             </div>
-            <br></br>
+            <div class="ui inverted divider"></div>
+
+            <div className="opacity">
+                <div className="row mr-2 ml-2">
+                    <h2 className="mr-2 ml-2">Filter by State</h2>
+                    <Filter
+                        value={stateChange}
+                        onChange={handleFilter}
+                    />
+                </div>
+                <br></br>
+            </div>
             < CardHolder>
                 {filtered.map(e => (
                     <EmployeeCard
@@ -148,7 +157,7 @@ const Main = () => {
                 <Modal aria-labelledby="contained-modal-title-vcenter"
                     centered show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>{employee.name}</Modal.Title>
+                        <Modal.Title className="ui yellow">{employee.name}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Container>
@@ -160,12 +169,12 @@ const Main = () => {
                                     </span>
                                 </Col>
                                 <Col md={8}>
-                                    <span > Location: {employee.location}</span><br></br>
-                                    {/* <span > Email: {employee.email}</span><br></br> */}
-                                    <span > Mobile:  {employee.phone}</span><br></br>
-                                    <span > Department:  {employee.department}</span><br></br>
-                                    <span > Salary:  $ {employee.finance}</span><br></br>
-                                    <span > Title:  {employee.title}</span><br></br>
+                                    <h6 > Location: {employee.location}</h6>
+                                    {/* <h6 > Email: {employee.email}</h6> */}
+                                    <h6 > Mobile:  {employee.phone}</h6>
+                                    <h6 > Department:  {employee.department}</h6>
+                                    <h6 > Salary:  $ {employee.finance}</h6>
+                                    <h6 > Title:  {employee.title}</h6>
 
 
 
@@ -179,21 +188,21 @@ const Main = () => {
                                 This employee has been fired
                         </div>
                         </Container>
-                        <Button variant="success" onClick={handleClose}>
+                        <Button className="ui inverted green button" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button variant="danger" onClick={() => {
+                        <Button className="ui inverted red button" variant="danger" onClick={() => {
                             handleFire(employee.email)
                             console.log(employee.email)
                         }
                         }>
-                            Fire
+                            Fire Employee
                         </Button>
 
                     </Modal.Footer>
                 </Modal>
             </CardHolder>
-        </>
+        </div>
     );
 }
 
