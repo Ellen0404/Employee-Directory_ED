@@ -32,4 +32,4 @@ or use deployed - [ link ](#Link-to-app)
 
 
 ## Link to app
-[Employee-Directory_ED](https://lit-chamber-43751.herokuapp.com/)
+[Employee-Directory_ED](https://ellen0404.github.io/Employee-Directory_ED/)
